@@ -18,8 +18,9 @@
                 <img class="photoProfile" src="image/vianney.jpg"/>
                 <p>Vianney DRS</p>
                 <form action="upload.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="fichier" class="fichierSelect">
-                <button type="submit" name="envoyer" class="fichierEnvoye">Envoyer</button>
+                    <input type="file" name="fichier" class="fichierSelect">
+                    <button type="submit" name="envoyer" class="fichierEnvoye">Envoyer</button>
+                </form>
             </div>
         </div>
     </body>
