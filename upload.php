@@ -12,15 +12,17 @@
     <body>
         <div class="div1">
             <div class="div2">
-                <h1>Epsi v2</h1>
-                <p>Platforme de peer-learning</p>
-                <p>EPSI Lille</p>
-                <img class="photoProfile" src="image/vianney.jpg"/>
-                <p>Vianney DRS</p>
+                <?php
+                    include 'header.php';
+                ?>
                 <form action="upload.php" method="post" enctype="multipart/form-data">
                     <input type="file" name="fichier" class="fichierSelect">
                     <button type="submit" name="envoyer" class="fichierEnvoye">Envoyer</button>
                 </form>
+                <bouton><a href="index.php">-> Retour <-</a></bouton>
+                <?php
+                    include 'footer.php';
+                ?>
             </div>
         </div>
     </body>
@@ -32,7 +34,7 @@
         $extension = strtolower(pathinfo($fichier, PATHINFO_EXTENSION));
         $extensionsAutorisees = array('jpg', 'jpeg', 'png', 'gif', 'pdf', 'doc', 'docx', 'zip', 'rar', '7z', 'mp3', 'wav', 'mp4', 'avi');
 
-        // Vérifier si le fichier existe déjà
+        // Vérifie si le fichier existe déjà
         $i = 1;
         $nouveauNom = $fichier;
         while(file_exists($dossier . $nouveauNom)){

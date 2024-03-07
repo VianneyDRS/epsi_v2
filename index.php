@@ -12,12 +12,16 @@
     <body>
         <div class="div1">
             <div class="div2">
-                <h1>Epsi v2</h1>
-                <p>Platforme de peer-learning</p>
-                <p>EPSI Lille</p>
+                <?php
+                    include 'header.php';
+                ?>
                 <img class="photoProfile" src="image/vianney.jpg"/>
                 <p>Vianney DRS</p>
+                <p>William Dourlens et Téo Fiminski</p>
                 <bouton><a class="upload" href="upload.php">-> Upload un fichier <-</a></bouton>
+                <?php
+                    include 'footer.php';
+                ?>
             </div>
         </div>
     </body>
