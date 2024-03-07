@@ -12,7 +12,7 @@ body{
     margin: 0;
     padding: 0;
 }
-.div1 {
+.mise_en_page {
     padding-top : 10%;
     padding-left: 30%;
     padding-right: 30%;
@@ -21,7 +21,7 @@ body{
     align-items: center;
     flex-direction: column;
 }
-.div2 {
+.fond_pour_affichage {
     background-color: #9d9d9d;
     
     border-radius: 5%;

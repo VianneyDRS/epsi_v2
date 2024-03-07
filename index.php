@@ -10,8 +10,8 @@
         <title>Epsi v2</title>
     </head>
     <body>
-        <div class="div1">
-            <div class="div2">
+        <div class="mise_en_page">
+            <div class="fond_pour_affichage">
                 <?php
                     include 'header.php';
                 ?>

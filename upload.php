@@ -10,14 +10,14 @@
         <title>Epsi v2</title>
     </head>
     <body>
-        <div class="div1">
-            <div class="div2">
+        <div class="mise_en_page">
+            <div class="fond_pour_affichage">
                 <?php
                     include 'header.php';
                 ?>
                 <form action="upload.php" method="post" enctype="multipart/form-data">
                     <input type="file" name="fichier" class="fichierSelect">
-                    <button type="submit" name="envoyer" class="fichierEnvoye">Envoyer</button>
+                    <button type="submit" name="envoyer_fichier" >Envoyer</button>
                 </form>
                 <bouton><a href="index.php">-> Retour <-</a></bouton>
                 <?php
@@ -28,11 +28,11 @@
     </body>
 </html>
 <?php
-    if(isset($_POST['envoyer'])){
+    if(isset($_POST['envoyer_fichier'])){
         $dossier = 'upload/';
         $fichier = basename($_FILES['fichier']['name']);
         $extension = strtolower(pathinfo($fichier, PATHINFO_EXTENSION));
-        $extensionsAutorisees = array('jpg', 'jpeg', 'png', 'gif', 'pdf', 'doc', 'docx', 'zip', 'rar', '7z', 'mp3', 'wav', 'mp4', 'avi');
+        $extensionsAutorisees = array('jpg', 'jpeg', 'png', 'pdf');
 
         // Vérifie si le fichier existe déjà
         $i = 1;
