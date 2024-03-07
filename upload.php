@@ -6,14 +6,14 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="base.css">
         <title>Epsi v2</title>
     </head>
     <body>
         <div class="mise_en_page">
             <div class="fond_pour_affichage">
                 <?php
-                    include 'header.php';
+                    include 'assets/header.php';
                 ?>
                 <form action="upload.php" method="post" enctype="multipart/form-data">
                     <input type="file" name="fichier" class="fichierSelect">
@@ -21,7 +21,7 @@
                 </form>
                 <bouton><a class="bouton_retour" href="index.php">-> Retour <-</a></bouton>
                 <?php
-                    include 'footer.php';
+                    include 'assets/footer.php';
                 ?>
             </div>
         </div>
