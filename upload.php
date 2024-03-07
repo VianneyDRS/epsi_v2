@@ -32,8 +32,16 @@
         $extension = strtolower(pathinfo($fichier, PATHINFO_EXTENSION));
         $extensionsAutorisees = array('jpg', 'jpeg', 'png', 'gif', 'pdf', 'doc', 'docx', 'zip', 'rar', '7z', 'mp3', 'wav', 'mp4', 'avi');
 
+        // Vérifier si le fichier existe déjà
+        $i = 1;
+        $nouveauNom = $fichier;
+        while(file_exists($dossier . $nouveauNom)){
+            $nouveauNom = pathinfo($fichier, PATHINFO_FILENAME) . $i . '.' . $extension;
+            $i++;
+        }
+
         if(in_array($extension, $extensionsAutorisees)){
-            if(move_uploaded_file($_FILES['fichier']['tmp_name'], $dossier . $fichier)){
+            if(move_uploaded_file($_FILES['fichier']['tmp_name'], $dossier . $nouveauNom)){
                 echo 'Upload effectué avec succès !';
             }else{
                 echo 'Echec de l\'upload !';
