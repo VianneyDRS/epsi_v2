@@ -23,7 +23,6 @@ body{
 }
 .fond_pour_affichage {
     background-color: #9d9d9d;
-    
     border-radius: 5%;
     padding-bottom: 10%;
     justify-content: center;
@@ -36,7 +35,11 @@ body{
     height: auto;
     border-radius: 50%;
 }
-.upload {
+.bouton_upload {
+    text-decoration: none;
+    color: #f4f4f4;
+}
+.bouton_retour {
     text-decoration: none;
     color: #f4f4f4;
 }

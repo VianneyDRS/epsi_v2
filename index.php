@@ -18,7 +18,7 @@
                 <img class="photoProfile" src="image/vianney.jpg"/>
                 <p>Vianney DRS</p>
                 <p>William Dourlens et Téo Fiminski</p>
-                <bouton><a class="upload" href="upload.php">-> Upload un fichier <-</a></bouton>
+                <bouton><a class="bouton_upload" href="upload.php">-> Upload un fichier <-</a></bouton>
                 <?php
                     include 'footer.php';
                 ?>

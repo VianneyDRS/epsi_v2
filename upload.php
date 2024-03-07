@@ -19,7 +19,7 @@
                     <input type="file" name="fichier" class="fichierSelect">
                     <button type="submit" name="envoyer_fichier" >Envoyer</button>
                 </form>
-                <bouton><a href="index.php">-> Retour <-</a></bouton>
+                <bouton><a class="bouton_retour" href="index.php">-> Retour <-</a></bouton>
                 <?php
                     include 'footer.php';
                 ?>
@@ -28,28 +28,37 @@
     </body>
 </html>
 <?php
+    // Fonction pour uploader un fichier
     if(isset($_POST['envoyer_fichier'])){
         $dossier = 'upload/';
         $fichier = basename($_FILES['fichier']['name']);
-        $extension = strtolower(pathinfo($fichier, PATHINFO_EXTENSION));
-        $extensionsAutorisees = array('jpg', 'jpeg', 'png', 'pdf');
 
-        // Vérifie si le fichier existe déjà
-        $i = 1;
-        $nouveauNom = $fichier;
-        while(file_exists($dossier . $nouveauNom)){
-            $nouveauNom = pathinfo($fichier, PATHINFO_FILENAME) . $i . '.' . $extension;
-            $i++;
-        }
+        if(empty($fichier)){ 
+            // Vérifie si un fichier a été sélectionné
+            echo 'Aucun fichier sélectionné';
+        } else {
+            // Récupère l'extension du fichier et définie celle autorisé
+            $extension = strtolower(pathinfo($fichier, PATHINFO_EXTENSION));
+            $extensionsAutorisees = array('jpg', 'jpeg', 'png', 'pdf');
 
-        if(in_array($extension, $extensionsAutorisees)){
-            if(move_uploaded_file($_FILES['fichier']['tmp_name'], $dossier . $nouveauNom)){
-                echo 'Upload effectué avec succès !';
-            }else{
-                echo 'Echec de l\'upload !';
+            // Vérifie si le fichier existe déjà
+            $compteur_fichier = 1;
+            $nouveauNom = $fichier;
+            while(file_exists($dossier . $nouveauNom)){
+                $nouveauNom = pathinfo($fichier, PATHINFO_FILENAME) . $compteur_fichier . '.' . $extension;
+                $compteur_fichier++;
             }
-        }else{
-            echo 'Extension de fichier non autorisée !';
+
+            // Vérifie si l'extension du fichier est autorisée
+            if(in_array($extension, $extensionsAutorisees)){
+                if(move_uploaded_file($_FILES['fichier']['tmp_name'], $dossier . $nouveauNom)){
+                    echo 'Upload effectué avec succès !';
+                }else{
+                    echo 'Echec de l\'upload !';
+                }
+            }else{
+                echo 'Extension de fichier non autorisée !';
+            }
         }
     }
 ?>
